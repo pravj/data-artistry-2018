@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import IndianGrounds from './components/IndianGrounds'
 import ChangeSlope from './components/ChangeSlope'
 import MostDismissals from './components/MostDismissals'
+import PerBallShare from './components/PerBallShare'
 
 import './App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
           <IndianGrounds/>
           <ChangeSlope/>
           <MostDismissals/>
+          <PerBallShare/>
         </div>
     );
   }

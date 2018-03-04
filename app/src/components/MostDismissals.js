@@ -173,6 +173,12 @@ class MostDismissals extends Component {
   }
 
   render() {
+    const pStyle = {
+      textAlign: 'center',
+      width: 'max-content',
+      margin: 'auto',
+    };
+
     return (
         <div className="app-most-dismissals">
           <h5 className="app-title">Batsman Vs. Bowler Pairs (Most Dismissal)</h5>
@@ -184,6 +190,9 @@ class MostDismissals extends Component {
             <span className="legend-node allrounder-node">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span>Allrounder &nbsp;</span>
           </div>
+          <p style={pStyle}>Every top batsman has a nemesis bowlers to watch out for. I remember Virendar Sehwag and Nathan Bracken sharing this bond in 2000's.</p>
+          <br/>
+          <p style={pStyle}>The following network graph represents such famous pairs from IPL.</p>
           <div className="app-most-dismissals-content"/>
         </div>
     );

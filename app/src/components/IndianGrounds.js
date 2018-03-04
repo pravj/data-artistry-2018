@@ -134,11 +134,27 @@ let markers = [];
 class IndianGrounds extends Component {
   static getDescription(teamName) {
     switch (teamName) {
-      case "Kolkata Knight Riders": {
-        return "KKR"
+      case "Kochi Tuskers Kerala": {
+        return "Kochi Tuskers has lost more in home ground"
+      } case "Gujarat Lions": {
+        return "Gujarat Lions has lost 40% of matches in home ground"
+      } case "Rising Pune Supergiants": {
+        return "CSK has won 33 out of 47 matches in their home ground"
+      } case "Sunrisers Hyderabad": {
+        return "Rajasthan Royals has a higher Win/Loss Ratio in 10 grounds"
+      } case "Kolkata Knight Riders": {
+        return "KKR has won highest number of matches (33) in Eden Gardens"
+      } case "Chennai Super Kings": {
+        return "CSK has won 33 out of 47 matches in their home ground"
+      } case "Rajasthan Royals": {
+        return "Rajasthan Royals has a higher Win/Loss Ratio in 10 grounds"
+      } case "Delhi Daredevils": {
+        return "Delhi Daredevils has a bad record on their home ground"
+      } case "Kings XI Punjab": {
+        return "KXIP has lost maximum matches in Eden Gardens"
       } default: {
-      return "DEFAULT"
-    }
+        return teamName
+      }
     }
   }
 
@@ -245,9 +261,18 @@ class IndianGrounds extends Component {
   }
 
   render() {
+    const pStyle = {
+      textAlign: 'center',
+      width: 'max-content',
+      margin: 'auto',
+    };
+
     return (
         <div id="app-ground-performance">
           <h4 className="app-title">IPL teams on Indian Grounds</h4>
+          <p style={pStyle}>All the teams have some matches in their home grounds (origin city), where they get support from the local crowd.</p>
+          <p style={pStyle}>Also, there is an additional pressure on the team to win as much matches as they can, while playing in the home ground.</p>
+          <p style={pStyle}>The following map measures the performance of a team all over the Indian grounds.</p>
           <div className="app-ground-performance-selector">
             <select onChange={this.onTeamChange}>
               {teams.map((t, i) => <option key={i}>{t.team}</option>)}

@@ -40,6 +40,8 @@ body { }
 .app-title {
     width: max-content;
     margin: auto;
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 .app-ground-performance-description {
@@ -58,6 +60,11 @@ body { }
 }
 
 .app-most-dismissals {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.app-per-ball-share {
     text-align: center;
     padding-bottom: 20px;
 }
@@ -133,4 +140,8 @@ text {
 
 .allrounder-node {
     background-color: #000;
+}
+
+.app-most-dismissals-label {
+    margin-bottom: 20px;
 }

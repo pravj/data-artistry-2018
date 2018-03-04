@@ -576,8 +576,20 @@ class ChangeSlope extends Component {
   }
 
   render() {
+    const pStyle = {
+      textAlign: 'center',
+      width: 'max-content',
+      margin: 'auto',
+    };
+
     return (
         <div className='app-change-slope'>
+          <h4 className="app-title">Performance Change with Time</h4>
+          <p style={pStyle}>Mumbai Indians started slowly in the early seasons of the IPL but ended up winning it 3 times.</p>
+          <p style={pStyle}>Rajasthan Royals won the first IPL trophy but finished 6th in the second season.</p>
+          <br/>
+          <p style={pStyle}>To summarize it all, the performance of a team varies every year.</p>
+          <p style={pStyle}>Use the following chart to see the changes in "Average Scores" and "Win/Loss Ratio" of teams.</p>
           <div className="app-change-slope-selector">
             <select className="app-change-slope-selector-left" onChange={this.onLeftYearChange}>
               <option>2008</option>
