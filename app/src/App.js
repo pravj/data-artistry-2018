@@ -22,6 +22,8 @@ class App extends Component {
   render() {
     return (
         <div>
+          <IndianGrounds/>
+          <ChangeSlope/>
           <MostDismissals/>
         </div>
     );

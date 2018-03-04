@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 let d3;
 
+// Reference: http://bl.ocks.org/mbostock/2706022
+
 class MostDismissals extends Component {
   constructor(props) {
     super(props);
