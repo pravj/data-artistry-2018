@@ -1,0 +1,7 @@
+venv
+
+datasets
+
+.ipynb_checkpoints
+
+app/.idea/

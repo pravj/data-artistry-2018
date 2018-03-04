@@ -1,0 +1,52 @@
+body { }
+
+#map { width:75%; height: 400px; margin: auto;}
+
+.ground-marker-green {
+    background-size: cover;
+    background-color: green;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 50%;
+}
+
+.ground-marker-red {
+    background-size: cover;
+    background-color: red;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 50%;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app-ground-performance-selector {
+    text-align: center;
+    padding: 20px;
+}
+
+.app-ground-performance-description {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.app-title {
+    width: max-content;
+    margin: auto;
+}
+
+.app-ground-performance-description {
+    border: 1px solid lightgrey;
+    width: max-content;
+    min-width: 200px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
