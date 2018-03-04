@@ -1,8 +1,4 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
-// import * as d3 from 'd3';
-
-// import '../../App.css';
 
 const teams = [
   {team: "Kolkata Knight Riders", code: "KKR"},
