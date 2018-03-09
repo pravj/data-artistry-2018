@@ -80,21 +80,21 @@ body { }
 .link-7 {
     fill: none;
     stroke: #666;
-    stroke-width: 2px;
+    stroke-width: 8px;
     stroke-opacity: 1.0;
 }
 
 .link-6 {
     fill: none;
     stroke: #666;
-    stroke-width: 2px;
+    stroke-width: 6px;
     stroke-opacity: 0.8;
 }
 
 .link-5 {
     fill: none;
     stroke: #666;
-    stroke-width: 2px;
+    stroke-width: 4px;
     stroke-opacity: 0.5;
 }
 
@@ -172,5 +172,18 @@ text {
 .toss-text {
     font-size: 15px;
     font-weight: bold;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: max-content;
+    padding: 2px;
+    padding-bottom: 10px;
+    font: 12px sans-serif;
+    background: #495867;
+    color: #F1F1F1;
+    pointer-events: none;
 }
 

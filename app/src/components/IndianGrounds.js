@@ -267,6 +267,13 @@ class IndianGrounds extends Component {
       margin: 'auto',
     };
 
+    const lStyle = {
+      textAlign: 'left',
+      width: 'max-content',
+      margin: 'auto',
+      fontSize: '10px',
+    };
+
     return (
         <div id="app-ground-performance">
           <h4 className="app-title">IPL teams on Indian Grounds</h4>
@@ -282,6 +289,9 @@ class IndianGrounds extends Component {
             {IndianGrounds.getDescription(this.state.selectedTeam)}
           </div>
           <div id="map"/>
+          <p style={lStyle}>A red circle for ground represents that the team has lost more matches at this ground, it's green for more wins.</p>
+          <p style={lStyle}>The size of a circle aligns with %win or %loss at a ground (20px being the maximum size).</p>
+          <p style={lStyle}>For example, KKR has more won maximum matches (in count) in Eden Gardens but they had also played maximum there, that's why the size is small.</p>
         </div>
     );
   }

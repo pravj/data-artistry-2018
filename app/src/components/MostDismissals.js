@@ -109,6 +109,10 @@ class MostDismissals extends Component {
     const width = pageWidth - (2 * padding.left);
     const height = width * 0.85;
 
+    const div = d3.select(".app-most-dismissals").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
     const force = d3.layout.force()
         .nodes(d3.values(nodes))
         .links(links)
@@ -136,8 +140,55 @@ class MostDismissals extends Component {
         .attr("class", function (d) {
           return "node-" + (role[d.name]);
         })
-        .on("mouseover", mouseover)
-        .on("mouseout", mouseout)
+        .on("mouseover", function (d) {
+          div.transition()
+              .duration(200)
+              .style("opacity", .9);
+
+          let list = [""];
+          if (role[d.name] === 'batsmen') {
+            list.push("<b>" + d.name + " got out by</b>");
+            list.push("");
+            for(let i = 0; i < links.length; i++) {
+              if (links[i].target.name === d.name) {
+                list.push(links[i].source.name + " (" + links[i].value + " times)");
+              }
+            }
+          } else if (role[d.name] === 'bowler') {
+            list.push("<b>" + d.name + " took wickets of</b>");
+            list.push("");
+            for(let i = 0; i < links.length; i++) {
+              if (links[i].source.name === d.name) {
+                list.push(links[i].target.name + " (" + links[i].value + " times)");
+              }
+            }
+          } else {
+            list = [
+                "",
+                "<b>RA Jadeja</b>",
+                "",
+                "took wickets of SR Watson (5 times)",
+                "got out by A Mishra (4 times)"
+            ];
+          }
+
+          div.html(list.join("<br/>"))
+              .style("left", (d3.event.pageX) + "px")
+              .style("top", (d3.event.pageY - 40) + "px");
+
+          d3.select(this).select("circle").transition()
+              .duration(750)
+              .attr("r", 16);
+        })
+        .on("mouseout", function () {
+          div.transition()
+              .duration(500)
+              .style("opacity", 0);
+
+          d3.select(this).select("circle").transition()
+              .duration(750)
+              .attr("r", 8);
+        })
         .call(force.drag);
 
     node.append("circle")
@@ -157,19 +208,6 @@ class MostDismissals extends Component {
 
       node
           .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-    }
-
-    function mouseover() {
-      console.log(d3.select(this));
-      d3.select(this).select("circle").transition()
-          .duration(750)
-          .attr("r", 16);
-    }
-
-    function mouseout() {
-      d3.select(this).select("circle").transition()
-          .duration(750)
-          .attr("r", 8);
     }
   }
 
