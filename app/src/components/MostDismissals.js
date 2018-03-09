@@ -160,6 +160,7 @@ class MostDismissals extends Component {
     }
 
     function mouseover() {
+      console.log(d3.select(this));
       d3.select(this).select("circle").transition()
           .duration(750)
           .attr("r", 16);

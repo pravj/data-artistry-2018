@@ -55,17 +55,17 @@ class PerBallShare extends Component {
 
     const textValue = (n) => {
       if (n <= 12) {
-        return "Four"
+        return "4"
       } else if (n > 12 && n <= 18) {
-        return "Extra"
+        return "Ex"
       } else if (n > 18 && n <= 23) {
-        return "Six"
+        return "6"
       } else if (n > 23 && n <= 28) {
-        return "Wicket"
+        return "W"
       } else if (n > 28 && n <= 35) {
-        return "Double"
+        return "2"
       } else if (n > 35 && n <= 72) {
-        return "Single"
+        return "1"
       } else {
         return ""
       }
@@ -74,14 +74,14 @@ class PerBallShare extends Component {
     for (let i = 0; i < 10; i++) {
       for (let j = 0; j < 10; j++) {
         svg.append("circle")
-            .attr("cx", (blockWidth / 2) + (j * blockWidth))
-            .attr("cy", (blockWidth / 2) + (i * blockWidth))
-            .attr("r", (blockWidth / 2))
+            .attr("cx", (blockWidth / 4) + (j * blockWidth))
+            .attr("cy", (blockWidth / 4) + (i * blockWidth))
+            .attr("r", (blockWidth / 4))
             .attr("fill", colorCodes(i*10 + j))
 
         svg.append("text")
-            .attr("x", (blockWidth / 2) + (j * blockWidth))
-            .attr("y", (blockWidth / 2) + (i * blockWidth))
+            .attr("x", (blockWidth / 4) + (j * blockWidth))
+            .attr("y", (blockWidth / 4) + (i * blockWidth))
             .attr("font-size", isSmallDevice ? '10px' : '25px')
             .attr("text-anchor", 'middle')
             .text(textValue(i*10 + j))
@@ -100,10 +100,11 @@ class PerBallShare extends Component {
     return (
         <div className="app-per-ball-share">
           <h5 className="app-title">100 balls of IPL</h5>
-          <p style={pStyle}>The following "dot matrix" represents share of major outcome per ball.</p>
-          <br/>
-          <p style={pStyle}><span style={{color: '#fd8d3c'}}>Wicket</span> and <span style={{color: '#d94801'}}>Extra</span> are bowlers/fielders focused outcomes.</p>
-          <p style={pStyle}><span style={{color: '#f16913'}}>Six</span>, <span style={{color: '#8c2d04'}}>Four</span>, <span style={{color: '#fdae6b'}}>Double</span>, and <span style={{color: '#fdd0a2'}}>Single</span> are batsman focused outcomes.</p>
+          <p style={pStyle}>Out of the <span style={{ fontWeight: 'bold', fontSize: '30px' }}>136598</span> balls in the all IPL matches (till 2016)</p>
+          <p style={pStyle}><span style={{ fontWeight: 'bold', fontSize: '20px', color: '#8c2d04' }}>15421</span> balls were scored for 4 runs</p>
+          <p style={pStyle}><span style={{ fontWeight: 'bold', fontSize: '22px', color: '#d94801' }}>7469</span> balls were sent out of the boundary for 6 runs</p>
+          <p style={pStyle}><span style={{ fontWeight: 'bold', fontSize: '18px', color: '#fd8d3c' }}>6726</span> balls were responsible for sending a batsman out of the ground</p>
+          <p style={pStyle}><span style={{ fontWeight: 'bold', fontSize: '16px', color: '#f16913' }}>5817</span> balls were directly sent out of the boundary for 6 runs</p>
           <div className="app-per-ball-share-content"/>
         </div>
     );

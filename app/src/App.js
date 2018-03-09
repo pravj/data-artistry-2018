@@ -4,6 +4,7 @@ import IndianGrounds from './components/IndianGrounds'
 import ChangeSlope from './components/ChangeSlope'
 import MostDismissals from './components/MostDismissals'
 import PerBallShare from './components/PerBallShare'
+import TossEffect from './components/TossEffect'
 
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
         <div>
           <p style={pStyle}><a href="https://hackpravj.com" target="_blank">Pravendra Singh</a> <a href="https://github.com/pravj/data-artistry-2018" target="_blank">(GitHub)</a></p>
           <IndianGrounds/>
+          <TossEffect/>
           <ChangeSlope/>
           <MostDismissals/>
           <PerBallShare/>

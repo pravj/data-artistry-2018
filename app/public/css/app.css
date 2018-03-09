@@ -145,3 +145,32 @@ text {
 .app-most-dismissals-label {
     margin-bottom: 20px;
 }
+
+/* toss effect */
+
+.lost-toss-won-match {
+    fill: #4E937A;
+}
+
+.lost-toss-lost-match {
+    fill: #BF4342;
+}
+
+.won-toss-won-match {
+    fill: #4E937A;
+}
+
+.won-toss-lost-match {
+    fill: #BF4342;
+}
+
+.app-toss-effect {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.toss-text {
+    font-size: 15px;
+    font-weight: bold;
+}
+
